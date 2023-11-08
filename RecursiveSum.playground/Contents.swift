@@ -1,16 +1,10 @@
 import Foundation
 
 func sum(numbers: [Int]) -> Int {
-    var numbers = numbers
-    var total: Int = .zero
     if numbers.isEmpty {
-        return total
+        return 0
     }
-
-    total = numbers.popLast()! + sum(numbers: numbers)
-
-    return total
+    return numbers.last! + sum(numbers: numbers.dropLast())
 }
 
-
-sum(numbers: [1])
+sum(numbers: [1, 2, 3, 4])
